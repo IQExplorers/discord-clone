@@ -1,3 +1,4 @@
+import { ServerWithMembersWithProfiles } from "@/types";
 import { Channel, ChannelType, Server } from "@prisma/client";
 import { create } from "zustand";
 

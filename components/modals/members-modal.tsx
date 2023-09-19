@@ -37,6 +37,7 @@ import { MemberRole } from "@prisma/client";
 import qs from "query-string";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { ServerWithMembersWithProfiles } from "@/types";
 
 export const MembersModal = () => {
   const [loadingId, setLoadingId] = useState("");
@@ -44,9 +45,11 @@ export const MembersModal = () => {
     isOpen,
     onClose,
     type,
-    data: { server },
+    data,
     onOpen,
   } = useModal();
+
+  const { server } = data as { server: ServerWithMembersWithProfiles };
 
   const router = useRouter();
 
